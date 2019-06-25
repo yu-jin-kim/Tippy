@@ -22,6 +22,39 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Tip Calculator";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
+    
+    NSLog(@"%f", doubleValue);
+    if (doubleValue == 0.15) {
+        self.tipControl.selectedSegmentIndex = 0;
+    }
+    else if (doubleValue == 0.18)
+    {
+        self.tipControl.selectedSegmentIndex = 1;
+    }
+    else{
+        self.tipControl.selectedSegmentIndex = 2;
+    }
+    // If doubleValue == 0.18, set segmentedControl.index = 1
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.title = @"Tip Calculator";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
+    if (doubleValue == 0.15) {
+        self.tipControl.selectedSegmentIndex = 0;
+    }
+    else if (doubleValue == 0.18)
+    {
+        self.tipControl.selectedSegmentIndex = 1;
+    }
+    else{
+        self.tipControl.selectedSegmentIndex = 2;
+    }
 }
 
 - (IBAction)onTap:(id)sender {
