@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
+@property (weak, nonatomic) IBOutlet UILabel *tip;
+@property (weak, nonatomic) IBOutlet UILabel *total;
 
 @end
 
@@ -37,7 +39,6 @@
     else{
         self.tipControl.selectedSegmentIndex = 2;
     }
-    // If doubleValue == 0.18, set segmentedControl.index = 1
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -55,6 +56,37 @@
     else{
         self.tipControl.selectedSegmentIndex = 2;
     }
+    self.billField.text = @"";
+    self.tipLabel.text = @"$0.00";
+    self.totalLabel.text = @"$0.00";
+}
+- (IBAction)onEditBegin:(id)sender {
+    [UIView animateWithDuration:0.2 animations:^{
+        self.tip.frame = CGRectMake(self.tip.frame.origin.x, self.tip.frame.origin.y - 50, self.tip.frame.size.width, self.tip.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.total.frame = CGRectMake(self.total.frame.origin.x, self.total.frame.origin.y - 125, self.total.frame.size.width, self.total.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.tipLabel.frame = CGRectMake(self.tipLabel.frame.origin.x, self.tipLabel.frame.origin.y - 50, self.tipLabel.frame.size.width, self.tipLabel.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.totalLabel.frame = CGRectMake(self.totalLabel.frame.origin.x, self.totalLabel.frame.origin.y - 125, self.totalLabel.frame.size.width, self.totalLabel.frame.size.height);
+    }];
+}
+- (IBAction)onEditEnd:(id)sender {
+    [UIView animateWithDuration:0.2 animations:^{
+        self.tip.frame = CGRectMake(self.tip.frame.origin.x, self.tip.frame.origin.y + 50, self.tip.frame.size.width, self.tip.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.total.frame = CGRectMake(self.total.frame.origin.x, self.total.frame.origin.y + 125, self.total.frame.size.width, self.total.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.tipLabel.frame = CGRectMake(self.tipLabel.frame.origin.x, self.tipLabel.frame.origin.y + 50, self.tipLabel.frame.size.width, self.tipLabel.frame.size.height);
+    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.totalLabel.frame = CGRectMake(self.totalLabel.frame.origin.x, self.totalLabel.frame.origin.y + 125, self.totalLabel.frame.size.width, self.totalLabel.frame.size.height);
+    }];
 }
 
 - (IBAction)onTap:(id)sender {
