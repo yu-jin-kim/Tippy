@@ -30,8 +30,7 @@
         self.defaultControl.selectedSegmentIndex = 1;
     }
     else{
-        self.default
-        Control.selectedSegmentIndex = 2;
+        self.defaultControl.selectedSegmentIndex = 2;
     }
    
 }
