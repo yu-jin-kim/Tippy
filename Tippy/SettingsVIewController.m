@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *defaultControl;
 
+
 @end
 
 @implementation SettingsViewController
@@ -29,8 +30,10 @@
         self.defaultControl.selectedSegmentIndex = 1;
     }
     else{
-        self.defaultControl.selectedSegmentIndex = 2;
+        self.default
+        Control.selectedSegmentIndex = 2;
     }
+   
 }
 - (IBAction)defaultChanged:(id)sender {
     NSArray *defaultPercentages = @[@(0.15), @(0.18), @(0.20)];
@@ -39,6 +42,7 @@
     [defaults setDouble:defaultPercentage forKey:@"default_tip_percentage"];
     [defaults synchronize];
 }
+
 
 
 

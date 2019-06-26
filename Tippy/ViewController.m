@@ -59,6 +59,8 @@
     self.billField.text = @"";
     self.tipLabel.text = @"$0.00";
     self.totalLabel.text = @"$0.00";
+    
+    self.view.backgroundColor = [UIColor blackColor];
 }
 - (IBAction)onEditBegin:(id)sender {
     [UIView animateWithDuration:0.2 animations:^{
