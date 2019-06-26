@@ -31,8 +31,7 @@ GIF created with [Recordit](http://recordit.co/).
 
 ## Notes
 
-I attempted to implement dark mode/light mode but I did not know how to save my custom colors to reuse them in my functions, 
-and ran out of time to do so.
+I attempted to implement dark mode/light mode but I did not know how to save my custom colors to reuse them in my default functions, and ran out of time to do so.
 
 
 ## License
