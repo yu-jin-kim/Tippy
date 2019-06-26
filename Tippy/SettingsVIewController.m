@@ -11,6 +11,7 @@
 @interface SettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *defaultControl;
+@property (weak, nonatomic) IBOutlet UISwitch *modeControl;
 
 
 @end
